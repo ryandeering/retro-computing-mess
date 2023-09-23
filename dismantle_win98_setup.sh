@@ -4,7 +4,7 @@
 sudo ip addr del 192.168.2.1/24 dev enp0s25
 
 # Disable IP forwarding
-sudo echo 0 > /proc/sys/net/ipv4/ip_forward
+sudo sysctl -w net.ipv4.ip_forward=0
 
 # Flush iptables NAT settings
 sudo iptables -t nat -F
