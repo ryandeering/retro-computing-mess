@@ -12,8 +12,8 @@
 sudo ip addr add 192.168.2.1/24 dev enp0s25
 
 # Enable IP forwarding
+sudo sysctl -w net.ipv4.ip_forward=1
 sudo echo 1 > /proc/sys/net/ipv4/ip_forward
-
 # Configure iptables for NAT
 sudo iptables -t nat -A POSTROUTING -o wlp3s0 -j MASQUERADE
 
